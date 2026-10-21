@@ -4,8 +4,9 @@ Este repositorio contiene la solución al taller de Docker para el backend `eco-
 
 ##  Autor
 - **Estudiante:** William Inzandara
+-                 Khaled Benavides    
 - **Identificador:** 850342
-
+                     885768 
 ##  Estructura del Repositorio
 El proyecto cumple con la estructura exigida, incluyendo los siguientes archivos clave:
 - `Dockerfile`: Construcción multietapa (Builder y Runtime) y configuración del usuario no privilegiado.
