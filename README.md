@@ -1,29 +1,29 @@
-#  Eco-Air-Backend: Contenerización y Seguridad (Taller Semana 13)
+# Eco-Air-Backend: Contenerización y Seguridad 🌍⚙️
 
-Este repositorio contiene la solución al taller de Docker para el backend `eco-air-backend` (Spring Boot). El proyecto ha sido encapsulado en una imagen de producción ligera, segura y con cuotas estrictas de hardware utilizando las mejores prácticas de DevOps.
+[![Java](https://img.shields.io/badge/Java-17%2B-orange?style=flat-square&logo=openjdk)](https://openjdk.org/)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen?style=flat-square&logo=springboot)](https://spring.io/)
+[![Docker](https://img.shields.io/badge/Docker-Production%20Ready-blue?style=flat-square&logo=docker)](https://www.docker.com/)
 
-##  Autor
-- **Estudiante:** William Inzandara
--                 Khaled Benavides    
-- **Identificador:** 850342
-                     885768 
-##  Estructura del Repositorio
-El proyecto cumple con la estructura exigida, incluyendo los siguientes archivos clave:
-- `Dockerfile`: Construcción multietapa (Builder y Runtime) y configuración del usuario no privilegiado.
-- `.dockerignore`: Exclusión de archivos innecesarios para mantener el contexto de construcción ligero.
-- `audit_session.log`: Registro crudo de terminal (generado con PowerShell) con todas las pruebas forenses.
-- `FORENSIC_REPORT.md`: Informe detallado con las tablas de evidencias, hashes y análisis de resultados.
-- `src/` y `pom.xml`: Código fuente de la aplicación Java.
+Solución al taller de contenerización y seguridad en Docker para el backend de **Eco-Air-Backend** (Spring Boot). Este proyecto ha sido encapsulado siguiendo estrictos estándares de DevOps, implementando imágenes ligeras, aislamiento de privilegios y cuotas de hardware para entornos de producción.
 
-##  Características de Seguridad Implementadas
-1. **Multi-stage Build:** Se separa el entorno de compilación (Maven) del entorno de ejecución (JRE Alpine), reduciendo el tamaño de la imagen final y la superficie de ataque.
-2. **Aislamiento de Privilegios:** La aplicación no se ejecuta como `root`. Se creó el usuario `sensor_user` (UID 10001) asignado al grupo `sensorgroup`.
-3. **Inmutabilidad de Runtime:** El usuario no tiene permisos de escritura en directorios críticos del sistema (ej. `/etc`), mitigando la inyección de scripts maliciosos.
-4. **Ergonomía de JVM:** Configuración de variables de entorno (`-XX:+UseContainerSupport`, `-XX:MaxRAMPercentage=75.0`) para un rendimiento óptimo dentro del contenedor.
+---
 
-##  Cómo construir y ejecutar
+## 👥 Autores
 
-### 1. Construir la imagen
-Para inyectar el ID del operador en tiempo de construcción, ejecuta:
-```bash
-docker build --build-arg STUDENT_ID=850342 -t eco-air-backend:1.0.0 .**
+* **William Inzandara** (ID: 850342)
+* **Khaled Benavides** (ID: 885768)
+
+---
+
+## 📂 Estructura del Repositorio
+
+El repositorio está organizado de la siguiente manera para garantizar trazabilidad y cumplimiento técnico:
+
+```text
+.
+├── src/                    # Código fuente de la aplicación Spring Boot
+├── pom.xml                 # Configuración de dependencias Maven
+├── Dockerfile              # Definición de construcción multietapa y seguridad
+├── .dockerignore           # Exclusiones para optimizar el contexto de Docker
+├── audit_session.log       # Registro crudo de terminal (PowerShell) con pruebas forenses
+└── FORENSIC_REPORT.md      # Informe detallado con tablas de evidencias, hashes y análisis
